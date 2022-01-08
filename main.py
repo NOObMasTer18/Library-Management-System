@@ -12,3 +12,5 @@ load_dotenv()
 
 mysqldbPassword = os.getenv("Password")
 print(mysqldbPassword)
+
+#ho gya kya ?
