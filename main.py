@@ -1,4 +1,3 @@
-import os
 from tkinter import *
 from PIL import ImageTk,Image #PIL -> Pillow
 import pymysql
@@ -10,7 +9,6 @@ from dotenv import load_dotenv
 # extras
 from init import get_cursor
 
-con = get_cursor()
-cor = con.cursor()
+cursor = get_cursor()
 
 print("Great success!")
