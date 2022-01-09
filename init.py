@@ -10,6 +10,7 @@ mysqldbPassword = os.getenv("Password")
 mydatabase="kv6library"
 
 
+# functions
 def get_connection() ->  pymysql.connect:
     connection = pymysql.connect(host="localhost",user="root",password=mysqldbPassword,database=mydatabase)
     
@@ -22,7 +23,7 @@ def get_cursor() -> pymysql.connect.cursor:
     return cursor
 
 
-# when run directly
+# Check
 if __name__ == "__main__":
     cursor = get_cursor()
     cursor.execute("select version()")

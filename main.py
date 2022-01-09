@@ -1,14 +1,31 @@
+# Starters
 from tkinter import *
 from PIL import ImageTk,Image #PIL -> Pillow
-import pymysql
-# from AddBook import *
-# from DeleteBook import *
-# from ViewBooks import *
-# from IssueBook import *
-from dotenv import load_dotenv
-# extras
+from pathlib import Path
+# from methods.AddBook import *
+# from methods.DeleteBook import *
+# from methods.ViewBooks import *
+# from methods.IssueBook import *
+#extras
+from Images.images import getLibImage
+
+#init
 from init import get_cursor
+
+
 
 cursor = get_cursor()
 
-print("Great success!")
+
+# intializing tkinter
+root = Tk()
+root.title("Library")
+root.minsize(width=400,height=400) 
+root.geometry("600x500")
+
+# setting image
+imgPath = getLibImage()
+background_Image = Image.open(imgPath)
+
+
+root.mainloop() #run tkinter
