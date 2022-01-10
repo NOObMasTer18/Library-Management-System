@@ -1,6 +1,4 @@
 *.env
-*.jpeg
-*.png
 
 test.py
 button.json

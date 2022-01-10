@@ -23,10 +23,11 @@ root.title("Library")
 root.minsize(width=400,height=400) 
 root.geometry("600x500")
 
+
+# background image
 imgPath = getLibImage()
 same=True
 n=0.25
-# Adding a background image
 background_image =Image.open(imgPath)
 [imageSizeWidth, imageSizeHeight] = background_image.size
 newImageSizeWidth = int(imageSizeWidth*n)
@@ -34,7 +35,6 @@ if same:
     newImageSizeHeight = int(imageSizeHeight*n) 
 else:
     newImageSizeHeight = int(imageSizeHeight/n) 
-
 img = ImageTk.PhotoImage(background_image)
 Canvas1 = Canvas(root)
 Canvas1.create_image(300,340,image = img)      
