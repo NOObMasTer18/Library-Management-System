@@ -1,5 +1,7 @@
 *.env
 *.jpeg
+*.png
+
 test.py
 button.json
 __pycache__
