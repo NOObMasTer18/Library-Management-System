@@ -4,7 +4,6 @@ from pathlib import Path
 from PIL import Image,ImageTk
 
 imageFormats = [".jpeg","jpg"]
-
 def getLibImage() -> Path:
     """Gets path of a random image file present in dir Image/ ."""
     file_dir = Path(__file__).absolute().parent

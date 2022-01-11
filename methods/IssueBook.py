@@ -2,7 +2,7 @@ from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
 from methods._init import get_connectionAndCursor
-
+from methods.Images.images import set_backgroundImage
 
 con,cur = get_connectionAndCursor()
 
@@ -80,16 +80,16 @@ def issueBook():
     
     global issueBtn,labelFrame,lb1,inf1,inf2,quitBtn,root,Canvas1,status
     
-    root = Tk()
+    root = Toplevel()
     root.title("Library")
     root.minsize(width=400,height=400)
     root.geometry("600x500")
     
-    Canvas1 = Canvas(root)
-    Canvas1.config(bg="#D6ED17")
-    Canvas1.pack(expand=True,fill=BOTH)
-
-    headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
+    # Canvas1 = Canvas(root)
+    # Canvas1.config(bg="#D6ED17")
+    # Canvas1.pack(expand=True,fill=BOTH)
+    img,root = set_backgroundImage(root)
+    headingFrame1 = Frame(root,bg="#FA9412",bd=5)
     headingFrame1.place(relx=0.25,rely=0.1,relwidth=0.5,relheight=0.13)
         
     headingLabel = Label(headingFrame1, text="Issue Book", bg='black', fg='white', font=('Courier',15))

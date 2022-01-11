@@ -1,10 +1,13 @@
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
+
 if __name__ == "__main__":
     from _init import get_connectionAndCursor
+    from Images.images import set_backgroundImage
 else:
     from methods._init import get_connectionAndCursor
+    from methods.Images.images import set_backgroundImage
 
 def bookRegister():
     
@@ -39,10 +42,10 @@ def addBook():
     
     global bookInfo1,bookInfo2,bookInfo3,bookInfo4,Canvas1,con,cur,bookTable,root
     
-    root = Tk()
+    root = Toplevel()
     root.title("Library")
     root.minsize(width=400,height=400)
-    root.geometry("600x500")
+    root.geometry("650x500")
 
     con,cur = get_connectionAndCursor()
     
@@ -51,12 +54,13 @@ def addBook():
     # Enter Table Names here
     bookTable = "books" # Book Table
 
-    Canvas1 = Canvas(root)
     
-    Canvas1.config(bg="#ff6e40")
-    Canvas1.pack(expand=True,fill=BOTH)
+    # Canvas1 = Canvas(root)
+    # Canvas1.config(bg="#ff6e40")
+    # Canvas1.pack(expand=True,fill=BOTH)
+    img,root = set_backgroundImage(root)
         
-    headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
+    headingFrame1 = Frame(root,bg="#6AF50F",bd=5)
     headingFrame1.place(relx=0.25,rely=0.1,relwidth=0.5,relheight=0.13)
 
     headingLabel = Label(headingFrame1, text="Add Books", bg='black', fg='white', font=('Courier',15))
@@ -105,7 +109,4 @@ def addBook():
 
 if __name__ == "__main__":
     addBook()
-    con,cur = get_connectionAndCursor()
-
-    cur.execute("select * from books")
-    for child in cur: print(child)
+    
