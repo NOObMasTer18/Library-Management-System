@@ -1,14 +1,10 @@
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
-import pymysql
+from methods._init import get_connectionAndCursor
 
-# Add your own database name and password here to reflect in the code
-mypass = "root"
-mydatabase="db"
 
-con = pymysql.connect(host="localhost",user="root",password=mypass,database=mydatabase)
-cur = con.cursor()
+con,cur = get_connectionAndCursor()
 
 # Enter Table Names here
 bookTable = "books" 
@@ -52,3 +48,6 @@ def View():
     quitBtn.place(relx=0.4,rely=0.9, relwidth=0.18,relheight=0.08)
     
     root.mainloop()
+
+if __name__ == "__main__":
+    View()

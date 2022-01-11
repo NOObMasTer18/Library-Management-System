@@ -1,7 +1,10 @@
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
-import pymysql
+if __name__ == "__main__":
+    from _init import get_connectionAndCursor
+else:
+    from methods._init import get_connectionAndCursor
 
 def bookRegister():
     
@@ -11,14 +14,19 @@ def bookRegister():
     status = bookInfo4.get()
     status = status.lower()
     
-    insertBooks = "insert into "+bookTable+" values('"+bid+"','"+title+"','"+author+"','"+status+"')"
+    insertBooks = str(f"insert into {bookTable} values('{bid}','{title}','{author}','{status}');")
     try:
-        cur.execute(insertBooks)
+        num = cur.execute(insertBooks)
+        print(num)
+        # con.commit()
+        cur.execute("select * from books")
+        for child in cur: print(child)
         con.commit()
+
         messagebox.showinfo('Success',"Book added successfully")
     except:
         messagebox.showinfo("Error","Can't add data into Database")
-    
+        
     print(bid)
     print(title)
     print(author)
@@ -36,12 +44,9 @@ def addBook():
     root.minsize(width=400,height=400)
     root.geometry("600x500")
 
-    # Add your own database name and password here to reflect in the code
-    mypass = "root"
-    mydatabase="db"
-
-    con = pymysql.connect(host="localhost",user="root",password=mypass,database=mydatabase)
-    cur = con.cursor()
+    con,cur = get_connectionAndCursor()
+    
+    
 
     # Enter Table Names here
     bookTable = "books" # Book Table
@@ -97,3 +102,10 @@ def addBook():
     quitBtn.place(relx=0.53,rely=0.9, relwidth=0.18,relheight=0.08)
     
     root.mainloop()
+
+if __name__ == "__main__":
+    addBook()
+    con,cur = get_connectionAndCursor()
+
+    cur.execute("select * from books")
+    for child in cur: print(child)
