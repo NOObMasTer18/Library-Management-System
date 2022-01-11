@@ -3,10 +3,14 @@ from tkinter import Canvas, Tk,PhotoImage
 from pathlib import Path
 from PIL import Image,ImageTk
 
+imageFormats = [".jpeg","jpg"]
+
 def getLibImage() -> Path:
     file_dir = Path(__file__).absolute().parent
-    imagepaths = sorted(Path(file_dir).glob("*.jpeg"))
-
+    imagepaths = list()
+    for format in imageFormats:
+        imagepaths.extend(sorted(Path(file_dir).glob(f"*{format}")))
+    
     chosed_path :Path = random.choice(imagepaths)
     
     return chosed_path
