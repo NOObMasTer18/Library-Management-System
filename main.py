@@ -21,7 +21,7 @@ root.geometry("650x500")
 #setting image background
 img,root = set_backgroundImage(root) 
     #img is returned bc it is a local variable used by mainloop. 
-    #Meanwhile, img gets redundant (if not returned) as python garbage collects it, on function end.
+    #Meanwhile, img gets redundant as python garbage collects it, on function end.
 
 #Heading
 headingFrame = Frame(root,bg="#f42f20",bd=5)
