@@ -4,3 +4,5 @@ host<br>
 user<br>
 myDatabase<br>
 password<br>
+<hr>
+

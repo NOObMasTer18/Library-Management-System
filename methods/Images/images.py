@@ -4,8 +4,11 @@ from pathlib import Path
 from PIL import Image,ImageTk
 
 imageFormats = [".jpeg","jpg"]
+
 def getLibImage() -> Path:
-    """Gets path of a random image file present in dir Image/ ."""
+    """
+    Gets path of a random image file present in dir Images/ .
+    """
     file_dir = Path(__file__).absolute().parent
     imagepaths = list()
     for format in imageFormats:
@@ -16,7 +19,9 @@ def getLibImage() -> Path:
     return chosed_path
 
 def set_backgroundImage(root: Tk) -> tuple[PhotoImage,Tk]:
-    """Sets background image of the object Tk() """
+    """
+    Sets background image of the object Tk() 
+    """
     imgPath = getLibImage()
     same=True
     n=0.25
