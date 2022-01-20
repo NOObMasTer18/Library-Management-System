@@ -1,6 +1,10 @@
 # Library-Management-System
-## environment variables to setup: 
+## Environment variables to setup: 
 host<br>
 user<br>
 myDatabase<br>
 password<br>
+<hr>
+
+## Mysql Database and Tables:
+
