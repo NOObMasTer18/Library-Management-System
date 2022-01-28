@@ -1,5 +1,5 @@
 *.env
-
+venv/
 test.py
 button.json
 __pycache__
