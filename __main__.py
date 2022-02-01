@@ -1,15 +1,12 @@
-# Starters
 from tkinter import *
-from PIL import ImageTk,Image #PIL -> Pillow
-from pathlib import Path
+
 from methods.AddBook import *
 from methods.DeleteBook import *
 from methods.ViewBooks import *
 from methods.IssueBook import *
 from methods.ReturnBook import *
-#extras
-from methods.Images.images import set_backgroundImage
 
+from methods.Images.images import set_backgroundImage
 
 
 # intializing tkinter
@@ -24,11 +21,17 @@ img,root = set_backgroundImage(root)
     #Meanwhile, img gets redundant (if not returned) as python garbage collects it, on function end.
 
 #Heading
-headingFrame = Frame(root,bg="#f42f20",bd=5)
-headingFrame.place(relx=0.2,rely=0.05,relwidth=0.6,relheight=0.14)
+headingFrame = Frame(root, bg="#f42f20",bd=5)
+headingFrame.place(relx=0.2, rely=0.05, relwidth=0.6, relheight=0.14)
 
-headingLabel = Label(headingFrame, text="Welcome to \n Kv6-Jaipur Library Portal", bg='black', fg='white', font=('Courier',15))
-headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
+headingLabel = Label(
+    headingFrame, 
+    text="Welcome to \n Kv6-Jaipur Library Portal", 
+    bg='black', 
+    fg='white', 
+    font=('Courier',15)
+    )
+headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
 
 #buttons
 btn1 = Button(root,text="Add Book Details",bg='black', fg='white', command=addBook)
@@ -45,7 +48,5 @@ btn4.place(relx=0.28,rely=0.7, relwidth=0.45,relheight=0.1)
     
 btn5 = Button(root,text="Return Book",bg='black', fg='white', command = returnBook)
 btn5.place(relx=0.28,rely=0.8, relwidth=0.45,relheight=0.1)
-
-
 
 root.mainloop() #run tkinter
