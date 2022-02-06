@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
-from methods._init import get_connectionAndCursor
+from methods.mySql import get_connectionAndCursor
 from methods.Images.images import set_backgroundImage
 
 

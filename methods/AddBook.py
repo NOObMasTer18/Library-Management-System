@@ -3,10 +3,10 @@ from PIL import ImageTk,Image
 from tkinter import messagebox
 
 if __name__ == "__main__":
-    from _init import get_connectionAndCursor
+    from mySql import get_connectionAndCursor
     from Images.images import set_backgroundImage
 else:
-    from methods._init import get_connectionAndCursor
+    from methods.mySql import get_connectionAndCursor
     from methods.Images.images import set_backgroundImage
 
 def bookRegister():
