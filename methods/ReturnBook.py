@@ -4,7 +4,6 @@ from tkinter import messagebox
 from methods.mySql import get_connectionAndCursor
 from methods.Images.images import set_backgroundImage
 
-con,cur = get_connectionAndCursor()
 
 # Enter Table Names here
 issueTable = "books_issued" #Issue Table
@@ -14,6 +13,7 @@ bookTable = "books" #Book Table
 allBid = [] #List To store all Book IDs
 
 def returnn():
+    con,cur = get_connectionAndCursor()
     
     global SubmitBtn,labelFrame,lb1,bookInfo1,quitBtn,root,Canvas1,status
     

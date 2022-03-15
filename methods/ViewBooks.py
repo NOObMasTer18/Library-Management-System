@@ -4,12 +4,12 @@ from tkinter import messagebox
 from methods.mySql import get_connectionAndCursor
 from methods.Images.images import set_backgroundImage
 
-con,cur = get_connectionAndCursor()
 
 # Enter Table Names here
 bookTable = "books" 
     
 def View(): 
+    con,cur = get_connectionAndCursor()
     
     root = Toplevel()
     root.title("Library")

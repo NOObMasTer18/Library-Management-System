@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-import pymysql
+import pymysql 
 import os
 
 
@@ -14,7 +14,8 @@ table1 = os.getenv("table1")
 table2 = os.getenv("table2")
 
 #Constructs 
-def get_connection() ->  pymysql.connect:
+def get_connection():
+    """Gets an connection class of mysql connectivity."""
     connection = pymysql.connect(
         host=host,
         user=user,
@@ -23,7 +24,8 @@ def get_connection() ->  pymysql.connect:
     
     return connection
 
-def get_connectionAndCursor() -> tuple[pymysql.connect.cursor,pymysql.connect]:
+def get_connectionAndCursor():
+    """Gets connection and cursor objects connecting to mysql database."""
     connection = get_connection()
     connection.ping()
     cursor = connection.cursor()
@@ -76,6 +78,7 @@ def initialize():
         cursor.execute(f"create table {table2}(bid varchar(20) primary key, issuedto varchar(30));")
         print(f"table {table2} created.")
 
+#this is for testing purposes only
 if __name__ == "__main__":
     connection,cursor = get_connectionAndCursor()
     cursor.execute("select version()")

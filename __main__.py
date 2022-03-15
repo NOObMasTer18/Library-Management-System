@@ -1,16 +1,22 @@
 from tkinter import *
 
 from methods.mySql import initialize
-from methods.AddBook import *
-from methods.DeleteBook import *
-from methods.ViewBooks import *
-from methods.IssueBook import *
-from methods.ReturnBook import *
+
+from methods.AddBook import addBook
+from methods.DeleteBook import delete
+from methods.ViewBooks import View
+from methods.IssueBook import issueBook
+from methods.ReturnBook import returnBook
 
 from methods.Images.images import set_backgroundImage
 
-
-initialize()
+try:
+    initialize()
+except:
+    print("Connection refused")
+    print("Wait! is your sql server running ?")
+    print("exiting...")
+    exit()
 
 # intializing tkinter
 root = Tk()

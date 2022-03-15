@@ -5,7 +5,6 @@ from methods.mySql import get_connectionAndCursor
 from methods.Images.images import set_backgroundImage
 
 
-con,cur = get_connectionAndCursor()
 
 # Enter Table Names here
 issueTable = "books_issued" 
@@ -14,6 +13,7 @@ bookTable = "books"
 
 def deleteBook():
     
+    con,cur = get_connectionAndCursor()
     bid = bookInfo1.get()
     
     deleteSql = "delete from "+bookTable+" where bid = '"+bid+"'"

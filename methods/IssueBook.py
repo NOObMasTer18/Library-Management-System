@@ -4,7 +4,6 @@ from tkinter import messagebox
 from methods.mySql import get_connectionAndCursor
 from methods.Images.images import set_backgroundImage
 
-con,cur = get_connectionAndCursor()
 
 # Enter Table Names here
 issueTable = "books_issued" 
@@ -14,6 +13,7 @@ bookTable = "books"
 allBid = [] 
 
 def issue():
+    con,cur = get_connectionAndCursor()
     
     global issueBtn,labelFrame,lb1,inf1,inf2,quitBtn,root,Canvas1,status
     
@@ -76,8 +76,7 @@ def issue():
     
     allBid.clear()
     
-def issueBook(): 
-    
+def issueBook():    
     global issueBtn,labelFrame,lb1,inf1,inf2,quitBtn,root,Canvas1,status
     
     root = Toplevel()

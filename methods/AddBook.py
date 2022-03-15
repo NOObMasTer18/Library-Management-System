@@ -2,7 +2,7 @@ from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
 
-if __name__ == "__main__":
+if __name__ == "__main__":      #only for testing purposes 
     from mySql import get_connectionAndCursor
     from Images.images import set_backgroundImage
 else:
@@ -25,15 +25,13 @@ def bookRegister():
         cur.execute("select * from books")
         for child in cur: print(child)
         con.commit()
+        print(bid, title, author, status)
 
         messagebox.showinfo('Success',"Book added successfully")
+        
     except:
         messagebox.showinfo("Error","Can't add data into Database")
         
-    print(bid)
-    print(title)
-    print(author)
-    print(status)
 
 
     root.destroy()
@@ -107,6 +105,7 @@ def addBook():
     
     root.mainloop()
 
+#this is only for testing purposes
 if __name__ == "__main__":
     addBook()
     
